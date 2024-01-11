@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "To-Do List";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" action="/Task/AddTask">
+    <input type="text" name="task" required />
+    <button type="submit">Add Task</button>
+</form>
+
+<ul>
+    @foreach (var task in ViewBag.Tasks)
+    {
+        <li>@task</li>
+    }
+</ul>
